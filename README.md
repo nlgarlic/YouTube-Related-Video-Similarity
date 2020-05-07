@@ -6,7 +6,7 @@ See these blog posts for a description of the project for which this code was de
 https://sites.temple.edu/tudsc/2020/02/26/identifying-similar-youtube-videos-by-comparing-metadata-in-r/
 https://sites.temple.edu/tudsc/2020/05/07/identifying-similar-youtube-videos-by-comparing-metadata-in-r-part-2/
 
-The code runs in RStudio Cloud. 
+The code runs in RStudio Cloud. You will need to upload the .csv of YouTube Categories in your working directory before running the code.
 
 To run the code, you will need OAuth credentials to access the YouTube API. See Creating YouTube API . . . instructions.
 
