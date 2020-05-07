@@ -8,6 +8,6 @@ https://sites.temple.edu/tudsc/2020/05/07/identifying-similar-youtube-videos-by-
 
 The code runs in RStudio Cloud. 
 
-To run the code, you will need OAuth credentials to access the YouTube API. See Creating YouTube API instructions.
+To run the code, you will need OAuth credentials to access the YouTube API. See Creating YouTube API . . . instructions.
 
 You will also need to customize the dictionary with key terms from your chosen (initial) video.
