@@ -4,6 +4,6 @@ This repository includes R code that can be used to assess the similarity betwee
 https://sites.temple.edu/tudsc/2020/02/26/identifying-similar-youtube-videos-by-comparing-metadata-in-r/
 https://sites.temple.edu/tudsc/2020/05/07/identifying-similar-youtube-videos-by-comparing-metadata-in-r-part-2/
 
-The code runs in rstudio.cloud/. 
+The code runs in RStudio Cloud. 
 
 To run the code, you will need OAuth credentials to access the YouTube API. See Creating YouTube API instructions.
