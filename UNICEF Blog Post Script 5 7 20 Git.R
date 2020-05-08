@@ -36,7 +36,8 @@ yt_oauth(app_id, app_secret)
 
 ## Initial Video
 #gather video details, including tags, title, and description (TTD) for chosen video and write to file
-#to enter your own initial video, the video ID is the alphanumeric code at the end of the youtube link (e.g., https://www.youtube.com/watch?v=MQcN5DtMT-0)
+#to enter your own initial video, the video ID is the alphanumeric code at the end of the youtube link 
+#(e.g., https://www.youtube.com/watch?v=MQcN5DtMT-0)
 i_video_details <- get_video_details(video_id = "MQcN5DtMT-0")
 i_video_details <- data.frame(i_video_details)
 i_video_details <- select_at(i_video_details, vars(starts_with("items.id"), 
@@ -56,6 +57,7 @@ dictionary <- c("unicef", "child", "pover", "foreverychild", "fightunfair")
 ## Related Videos
 #search for UNICEF YouTube video and download related videos
 #includes most video metadata but does not include tags
+#make sure to update video ID here if using your own initial video
 relatedvids <- get_related_videos(video_id = "MQcN5DtMT-0")
 write.csv(relatedvids, file = "relatedvids.csv")
 
@@ -84,7 +86,7 @@ for (i in relatedvids$rel_video_id) {
 rm(all_related_videos, final_related_videos, more_related_videos, morerelatedvids)
 
 #add column of related video ID order number (Rank)
-complete_related_videos <- complete_related_videos %>% mutate(Rank = 1:50) %>% select(Rank, everything())
+complete_related_videos <- complete_related_videos %>% mutate(Rank = 1:nrow(complete_related_videos)) %>% select(Rank, everything())
 
 #gather video view data for related videos
 complete_view_counts <- data.frame()
