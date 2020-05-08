@@ -186,27 +186,27 @@ write.csv(all_related_vids_combined, "all_related_vids_data.csv")
 dictionary
 
 #search for dictionary terms
-#search is done separately because coding schemes combines two words in one instance
+#search is done separately because coding scheme may combine two words
 
-#organization matches
+#organization matches - change to fit organization
 unicef_matches <- str_detect(all_related_vids_combined$`Video.Title.Description.Tags`, "unicef")
 
-#issue matches
+#issue matches - change to fit issues
 child_matches <- str_detect(all_related_vids_combined$`Video.Title.Description.Tags`, "child|boy|girl|teen|kid|yearold")
 poverty_matches <- str_detect(all_related_vids_combined$`Video.Title.Description.Tags`, "pover|homeless|fortunate")
 
-#hashtag matches
+#hashtag matches - change to fit hashtags or delete if none
 foreverychild_matches <- str_detect(all_related_vids_combined$`Video.Title.Description.Tags`, "foreverychild")
 fightunfair_matches <- str_detect(all_related_vids_combined$`Video.Title.Description.Tags`, "fightunfair")
 
-#convert each to integers from TRUE/FALSE
+#convert each to integers from TRUE/FALSE - update to fit your coding scheme
 unicef_matches <- as.integer(as.logical(unicef_matches))
 child_matches <- as.integer(as.logical(child_matches))
 poverty_matches <- as.integer(as.logical(poverty_matches))
 foreverychild_matches <- as.integer(as.logical(foreverychild_matches))
 fightunfair_matches <- as.integer(as.logical(fightunfair_matches))
 
-#create dataframe of all matches
+#create dataframe of all matches - update to fit your coding scheme
 all_matches <- data.frame("Rank" = all_related_vids_combined$Rank,
                           "Channel.Title" = all_related_vids_combined$Channel.Title,
                           "Video.Category.Text" = all_related_vids_combined$Video.Category.Text,
@@ -218,6 +218,8 @@ all_matches <- data.frame("Rank" = all_related_vids_combined$Rank,
                           "Video.Title.Description.Tags" = all_related_vids_combined$Video.Title.Description.Tags,
                           "Uncleaned.Text" = all_related_vids_combined$uncleanTDT)
 View(all_matches)
+
+#the following recoding will need to be customized for your coding scheme
 
 #spot check and then recode for dictionary weighting and add total column
 #recode child + poverty as 1 point (0 for only one)
